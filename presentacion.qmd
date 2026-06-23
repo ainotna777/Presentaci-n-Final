@@ -1,0 +1,82 @@
+---
+title: "Estado y juventudes chilenas: Legitmización desde la capacidad de acción"
+author: "Antonia San Juan"
+format: revealjs
+editor: visual
+---
+
+# Para iniciar...
+
+Esta investigación trata sobre la legitimización que las juventudes chilenas (específicamente mujeres) le otorgan al estado.   
+
+Para esto, vamos a usar las variables sociodemográficas e independientes sexo edad y zona, como predictores. 
+
+Luego utilizaremos ítems de respuesta que van desde “a muy en desacuerdo” a “en muy de acuerdo”, para luego dicotomizarlas. Por lo que desde la variable de constructo latente la convertiremos en valores de 0/1 para poder hacer regresión logística.
+
+**seleccion de items para constucto e indice**
+
+1.  **P13_d**: Hombres y mujeres son esencialmente iguales y la ley debe resguardar ese principio. 
+
+<!-- -->
+
+2.  **P13_e:** El Estado debe tomar todas las medidas para eliminar la discriminación contra la mujer. 
+
+<!-- -->
+
+3.  **P13_f** : El Estado debe garantizar a las mujeres el ejercicio de los derechos humanos en igualdad de condiciones con los hombres. 
+
+<!-- -->
+
+4.  **P13_g** :El Estado debe garantizar a las mujeres ejercer el derecho a voto,participar en la formulación de políticas públicas y en organizaciones no gubernamentales. 
+
+<!-- -->
+
+5.  **P13_h**: El Estado debe eliminar la discriminación contra la mujer en el acceso y calidad de la educación. 
+
+6.  **P13_i**: El Estado debe eliminar toda discriminación de las mujeres para acceder a un empleo y la mujer debe recibir una remuneración igual a sus pares hombres. 
+
+# **Justificación teórica**  
+
+“En general, tales estudios asumen como hecho dado que la pérdida de centralidad del Estado en la vida social contemporánea y el desencanto y frustración de los y las jóvenes respecto a las instituciones políticas, ha eliminado su interés en asuntos relacionados con éste. Con ello se ha minimizado el efecto e influencia de los sentidos y significados plurales que sobre el estado tejen, por un lado, los actores de la institucionalidad estatal a propósito de las acciones derivadas de las políticas públicas que afectan la vida cotidiana de los y las jóvenes; pero por otro lado, minimizando también el efecto e influencia de los sentidos que sobre el Estado tejen las agrupaciones de jóvenes en el marco de sus prácticas ciudadanas contemporáneas.” 
+
+Ocampo, A. M. (2011). Ciudadanía juvenil, juventud y Estado: Discursos de gobierno sobre sus significados. Revista Latinoamericana de Ciencias Sociales, Niñez y Juventud, 9(1), 287-303. 
+
+# **Alfa de cronbach**  
+
+Nos arroja un alfa de 0,92 esto mide la consistencia interna de los ítems en escala por lo que, al ser muy alto, si podemos decir que miden el constructo de legitimización anteriormente creado. 
+
+**Matriz de correlaciones**  
+
+El análisis descriptivo de la matriz de correlaciones, podemos connotar que la correlación entre sexo y edad no es significativa, lo que índica que la edad se distribuye igual entre el grupo de hombres y mujeres. 
+
+En la correlación de zona y edad, nos arroja un número negativo pero significativo, de lo que podemos interpretar que en la zona rural contiene habitantes adultos mayores, que la zona urbana. En relación con zona y sexo, podemos que el grupo de hombres y mujeres se distribuye por igual en zona urbana y rural. 
+
+Por otro lado, en las variables independientes P13e hasta P13i, se visualiza alta significancia estadística debido a que, a medida que aumenta la edad, disminuye el acuerdo hacia la acción estatal. A diferencia, los jóvenes suelen tener perspectivas progresivas, donde la mayor significancia estadística se concentra en el ítem P13h y edad en años. En el caso de la zona, los coeficientes se mantienen positivos, pero es importante destacar el valor -0.007 entre zona y el ítem P13d, donde existe postura nula acerca la igualdad ante la ley. 
+
+# **Regresión Lineal**  
+
+Como nuestra hipótesis marca las variables sociodemográficas entre ser mujer, vivir en zona urbana y ser joven, las utilizaremos para hacer la regresión lineal. El resultado de este se visualiza en un modelo lienal con los siguientes resultados: 
+
+![](images/clipboard-2920772627.png)
+
+# **Análisis bivariado entre grupos**  
+
+Al someter el predictor sexo mediante el T-test, logramos dieferencias que existe una diferencia significativa entre las medias de Femenino y Masculino, pero que a la vez ambas cajas están posicionadas en el índice número 4, lo que quiere decir que si están de acuerdo con la intervención y rol activo del Estado frente a la garantía de los derechos del género femenino. 
+
+Desde el análisis descriptivo, las mujeres tienen una media de 3,45, mientras que el grupo de hombres con 3,36. A pesar de que sea una diferencia numérica baja, consideramos que la muestra al ser grande, es una diferencia relevante en que el grupo de Mujeres efectivamente puntúa más alto que el grupo de hombres en la legitimización del rol del Estado paternalista. 
+
+Por otro lado, el 95% de intervalo de confianza nos indica un mínimo de 0.056 y máximo de 0.115, por lo cual no incluye el 0 y nos da seguridad en afirmas que las medias entre los grupos de Mujer y Hombre son estadísticamente significante, a pesar de ser por puntos bajos de diferencia, lo que teóricamente sugiere que el género femenino al ser predeterminado, sufre de inequidad estructural, lo que hace que en la contemporaneidad desarrollen condiciones como afectadas en la sociedad chilena, así proclamando la necesidad garantizadora de la protección del Estado frente a las condiciones laborales, educativas, salarios, etc. 
+
+Correlación entre edad y legitimización hacia el Estado 
+
+El coeficiente de correlación nos arroja un número negativo de -0.066, lo que significa que la relación es inversamente proporcional, por lo que a medida que aumentan los años de edad, suele bajar la legitimidad del rol del Estado activo frente a garantizar los derechos de las Mujeres y atenuar la inequidad estructural. Estadísticamente el valor de la correlación de Pearson se encuentra cercano al 0, por lo que a pesar de que sea una asociación débil, si existe en la realidad, ya que el valor p estima un valor extremadamente pequeño (mucho menos a 0.05), cuál refleja una tendencia real sobre el sistema, donde el precepto de aumento de rango etario afecta la percepción y legitimidad en la función del Estado, donde la confianza al 95% nos ofrece intervalos de máximo y mínimo negativo, afirmando nuestra hipótesis, a pesar de que sea una relación pequeña (pero en una muestra grande). 
+
+# **Regresión Logística** 
+
+el modelo de regresión lineal, logramos observar que ambos apuntan hacia la misma dirección, así el modelo de logaritmo de odds ratio nos confirma que el identificarse como mujer tiene menos probabilidades de legitimar al Estado como validador de derechos desde su capacidad de acción, una diferencia significante que el grupo de hombres dobla el porcentaje. 
+
+Presentamos el R2 ajustado capaz de explicar casi el 50% de la varianza (46%), demostrando un resultado neutro.  
+
+Para concluir, el predictor de edad nos otorga un odds ratio de 1,02 lo que significa que a medida que la persona cumple años, la probabilidad de confiar o legitimar al estado aumenta en un 2%. Por lo que, aceptamos nuestra hipótesis principal en afirmar que las juventudes femeninas chilenas muestran una posición crítica, que, al habitar en zonas centralizadas, permiten desarrollar integración a las instituciones como normativa general, pero que a la vez exhiben desconformismo, a diferencia de personas adultas. 
+
+# Conclusiones...
