@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Antonia San Juan">
+
+<title>Estado y juventudes chilenas: Legitmización desde la capacidad de acción</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="presentacion_files/libs/clipboard/clipboard.min.js"></script>
+<script src="presentacion_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="presentacion_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="presentacion_files/libs/quarto-html/popper.min.js"></script>
+<script src="presentacion_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="presentacion_files/libs/quarto-html/anchor.min.js"></script>
+<link href="presentacion_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="presentacion_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="presentacion_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="presentacion_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="presentacion_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Estado y juventudes chilenas: Legitmización desde la capacidad de acción</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Antonia San Juan </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="para-iniciar" class="level1">
+<h1>Para iniciar…</h1>
+<p>Esta investigación trata sobre la legitimización que las juventudes chilenas (específicamente mujeres) le otorgan al estado. &nbsp;&nbsp;</p>
+<p>Para esto, vamos a usar las variables sociodemográficas e independientes sexo edad y zona, como predictores.&nbsp;</p>
+<p>Luego utilizaremos&nbsp;ítems de respuesta que van desde&nbsp;“a muy en desacuerdo” a “en muy de acuerdo”, para luego dicotomizarlas. Por lo que desde la variable de constructo latente la convertiremos en valores de 0/1 para poder hacer regresión logística.&nbsp;</p>
+</section>
+<section id="justificación-teórica" class="level1">
+<h1><strong>Justificación teórica</strong> &nbsp;</h1>
+<p>“En general, tales estudios asumen como hecho dado que la pérdida de centralidad del&nbsp;Estado&nbsp;en la vida social contemporánea y el desencanto y frustración de los y las jóvenes respecto a las instituciones políticas, ha eliminado su interés en asuntos relacionados con éste. Con ello se ha minimizado el efecto e influencia de los sentidos y significados plurales que sobre el estado tejen, por un lado, los actores de la institucionalidad estatal a propósito de las acciones derivadas de las políticas públicas que afectan la vida cotidiana de los y las jóvenes; pero por otro lado, minimizando también el efecto e influencia de los sentidos que sobre el&nbsp;Estado&nbsp;tejen las agrupaciones de jóvenes en el marco de sus prácticas ciudadanas contemporáneas.”&nbsp;</p>
+<p>Ocampo, A. M. (2011). Ciudadanía juvenil, juventud y Estado: Discursos de gobierno sobre sus significados.&nbsp;Revista Latinoamericana de Ciencias Sociales, Niñez y Juventud,&nbsp;9(1), 287-303.&nbsp;</p>
+</section>
+<section id="alfa-de-cronbach" class="level1">
+<h1><strong>Alfa de cronbach</strong> &nbsp;</h1>
+<p>Nos arroja un alfa de 0,92 esto mide la consistencia interna de los ítems en escala por lo que, al ser muy alto, si podemos decir que miden el constructo de legitimización anteriormente creado.&nbsp;</p>
+<p><strong>Matriz de correlaciones</strong> &nbsp;</p>
+<p>El análisis descriptivo de la matriz de correlaciones, podemos connotar que la correlación entre sexo y edad no es significativa, lo que índica que la edad se distribuye igual entre el grupo de hombres y mujeres.&nbsp;</p>
+<p>En la correlación de zona y edad, nos arroja un número negativo pero significativo, de lo que podemos interpretar que en la zona rural contiene habitantes adultos mayores, que la zona urbana. En relación con zona y sexo, podemos que el grupo de hombres y mujeres se distribuye por igual en zona urbana y rural.&nbsp;</p>
+<p>Por otro lado, en las variables independientes P13e hasta P13i, se visualiza alta significancia estadística debido a que, a medida que aumenta la edad, disminuye el acuerdo hacia la acción estatal. A diferencia, los jóvenes suelen tener perspectivas progresivas, donde la mayor significancia estadística se concentra en el ítem P13h y edad en años. En el caso de la zona, los coeficientes se mantienen positivos, pero es importante destacar el valor -0.007 entre zona y el ítem P13d, donde existe postura nula acerca la igualdad ante la ley.&nbsp;</p>
+</section>
+<section id="regresión-lineal" class="level1">
+<h1><strong>Regresión Lineal</strong> &nbsp;</h1>
+<p>Como nuestra hipótesis marca las variables sociodemográficas entre ser mujer, vivir en zona urbana y ser joven, las utilizaremos para hacer la regresión lineal. El resultado de este se visualiza en un boxplot con los siguientes resultados:&nbsp;</p>
+<p>Ser Mujer (es mujer [Mujer]) →β=0.07&nbsp;</p>
+<ul>
+<li><strong>Interpretación:</strong> Manteniendo las demás variables constantes (edad y zona), las <strong>mujeres</strong> tienen, en promedio, <strong>0,07 puntos más</strong> en el índice de legitimación de la acción estatal en comparación con los hombres (que operan aquí como la categoría de referencia).&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Significancia:</strong> El asterisco (∗) y el hecho de que su barra de intervalo no toque la línea del cero indican que este efecto es <strong>estadísticamente significativo</strong>. Hay evidencia empírica de que el sexo influye en la postura hacia el rol del Estado en este tema.&nbsp;</li>
+</ul>
+<p>Vivir en Zona Urbana (zona [Urbana]) →β=0.02&nbsp;</p>
+<ul>
+<li><strong>Interpretación:</strong> Vivir en una zona urbana se asocia con un aumento muy pequeño de <strong>0,02 puntos</strong> en el índice en comparación con vivir en zonas rurales.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Significancia:</strong> <strong>No es estadísticamente significativo</strong> (no tiene asterisco y su barra cruza la línea del cero). Esto significa que, al menos en este modelo y con tus datos, la diferencia entre jóvenes urbanos y rurales respecto a cómo legitiman al Estado en derechos de las mujeres es prácticamente nula o no se puede asegurar que exista en la población. Ojo aquí, como en tu entrega anterior mencionaste que te ibas a centrar solo en zonas urbanas, si aplicaste un filtro a la base para quedarte solo con los casos urbanos, esta variable no debería variar o el modelo se calcula sobre los pocos márgenes que quedaron; revisa si la dejaste como control o si finalmente no filtraste la base.&nbsp;</li>
+</ul>
+<p>Edad (edad) →β=−0.01&nbsp;</p>
+<ul>
+<li><strong>Interpretación:</strong> Por cada año más de edad que cumple un joven dentro del rango estudiado (15 a 29 años), su índice de legitimación <strong>disminuye en promedio 0,01 puntos</strong>, manteniendo todo lo demás constante.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Significancia:</strong> Tiene un asterisco (∗), por lo que <strong>es significativo</strong>. Aunque el número parece muy pequeño (−0.01), recuerda que la edad es una variable continua: un joven de 29 años tendrá una diferencia acumulada de −0.14 puntos en el índice en comparación con uno de 15 años. Es decir, los más jóvenes dentro de la muestra tienden a exigirle o legitimar más la acción del Estado que los que están cerca de los 30&nbsp;</li>
+</ul>
+<p>Con solo la utilización de la regresión lineal no podemos aceptar nuestra hipótesis, para esto deberemos crear bajo el índice de legitimación, una regresión logística.&nbsp;</p>
+</section>
+<section id="análisis-bivariado-entre-grupos" class="level1">
+<h1><strong>Análisis bivariado entre grupos</strong> &nbsp;</h1>
+<p>Al someter el predictor sexo mediante el T-test, logramos dieferencias que existe una diferencia significativa entre las medias de Femenino y Masculino, pero que a la vez ambas cajas están posicionadas en el índice número 4, lo que quiere decir que si están de acuerdo con la intervención y rol activo del Estado frente a la garantía de los derechos del género femenino.&nbsp;</p>
+<p>Desde el análisis descriptivo, las mujeres tienen una media de 3,45, mientras que el grupo de hombres con 3,36. A pesar de que sea una diferencia numérica baja, consideramos que la muestra al ser grande, es una diferencia relevante en que el grupo de Mujeres efectivamente puntúa más alto que el grupo de hombres en la legitimización del rol del Estado paternalista.&nbsp;</p>
+<p>Por otro lado, el 95% de intervalo de confianza nos indica un mínimo de 0.056 y máximo de 0.115, por lo cual no incluye el 0 y nos da seguridad en afirmas que las medias entre los grupos de Mujer y Hombre son estadísticamente significante, a pesar de ser por puntos bajos de diferencia, lo que teóricamente sugiere que el género femenino al ser predeterminado, sufre de inequidad estructural, lo que hace que en la contemporaneidad desarrollen condiciones como afectadas en la sociedad chilena, así proclamando la necesidad garantizadora de la protección del Estado frente a las condiciones laborales, educativas, salarios, etc.&nbsp;</p>
+<p>Correlación entre edad y legitimización hacia el Estado&nbsp;</p>
+<p>El coeficiente de correlación nos arroja un número negativo de -0.066, lo que significa que la relación es inversamente proporcional, por lo que a medida que aumentan los años de edad, suele bajar la legitimidad del rol del Estado activo frente a garantizar los derechos de las Mujeres y atenuar la inequidad estructural. Estadísticamente el valor de la correlación de Pearson se encuentra cercano al 0, por lo que a pesar de que sea una asociación débil, si existe en la realidad, ya que el valor p estima un valor extremadamente pequeño (mucho menos a 0.05), cuál refleja una tendencia real sobre el sistema, donde el precepto de aumento de rango etario afecta la percepción y legitimidad en la función del Estado, donde la confianza al 95% nos ofrece intervalos de máximo y mínimo negativo, afirmando nuestra hipótesis, a pesar de que sea una relación pequeña (pero en una muestra grande).&nbsp;</p>
+</section>
+<section id="regresión-logística" class="level1">
+<h1><strong>Regresión Logística</strong>&nbsp;</h1>
+<p>el modelo de regresión lineal, logramos observar que ambos apuntan hacia la misma dirección, así el modelo de logaritmo de odds ratio nos confirma que el identificarse como mujer tiene menos probabilidades de legitimar al Estado como validador de derechos desde su capacidad de acción, una diferencia significante que el grupo de hombres dobla el porcentaje.&nbsp;</p>
+<p>Presentamos el R2 ajustado capaz de explicar casi el 50% de la varianza (46%), demostrando un resultado neutro. &nbsp;</p>
+<p>Para concluir, el predictor de edad nos otorga un odds ratio de 1,02 lo que significa que a medida que la persona cumple años, la probabilidad de confiar o legitimar al estado aumenta en un 2%. Por lo que, aceptamos nuestra hipótesis principal en afirmar que las juventudes femeninas chilenas muestran una posición crítica, que, al habitar en zonas centralizadas, permiten desarrollar integración a las instituciones como normativa general, pero que a la vez exhiben desconformismo, a diferencia de personas adultas.&nbsp;</p>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones…</h1>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
